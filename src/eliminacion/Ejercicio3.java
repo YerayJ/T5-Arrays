@@ -69,6 +69,9 @@ public class Ejercicio3 {
             } // Cierre switch
         } // Cierre del bucle
 
+        // Cierre de escáner
+        key.close();
+
     }
 
 }
