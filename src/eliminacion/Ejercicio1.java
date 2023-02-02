@@ -31,6 +31,8 @@ import java.util.Arrays;
 
             } // Termina el bucle
 
+
+
             // Muestra la tabla
             System.out.println(Arrays.toString(tabla));
         }

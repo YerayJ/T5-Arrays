@@ -32,12 +32,47 @@ public class Ejercicio5 {
         return tabla;
     }
 
-    public static void main(String[] args) {
-        // Creación del número de la suerte
-        int numSuerte;
+    private static int[] generaNumeroSuerte(int[] lista) {
+        int random2;
+        int random1;
+        // Se ejecutará mientras la longitud de la lista sea igual a 1
+        while (lista.length > 1) {
 
-        // Variables de posición aleatoria
-        int random1, random2;
+            // Variable de la media aritmética entre dos números
+            int media = 0;
+
+            // Genera los números aleatorios y comprueba que no sean iguales
+            random1 = (int) (Math.random() * lista.length);
+            do {
+                random2 = (int) (Math.random() * lista.length);
+            } while (random2 == random1);
+
+            // Hace la media de los dos números
+            media += (lista[random1] + lista[random2]) / 2;
+
+            // Variable auxiliar para no perder el valor
+            int aux = lista[random2];
+
+            // Sobreescribe una posición a la izquierda todos los números en la tabla
+            System.arraycopy(lista, random1 + 1, lista, random1, lista.length - random1 - 1);
+            // Le quita a la tabla el último número
+            lista = Arrays.copyOf(lista, lista.length - 1);
+
+            // Encontrar nueva posición del random 2
+            random2 = Arrays.binarySearch(lista, aux);
+            // Sobreescribe una posición a la izquierda todos los números en la tabla
+            System.arraycopy(lista, random2 + 1, lista, random2, lista.length - random2 - 1);
+
+            // Mete en la última posición la media
+            lista[lista.length - 1] = media;
+
+            // Ordena la lista ordenada
+            Arrays.sort(lista);
+        } // Fin del bucle
+        return lista;
+    }
+
+    public static void main(String[] args) {
 
         // Creación de lista de longitud 2
         int lista[] = new int[0];
@@ -61,17 +96,12 @@ public class Ejercicio5 {
         // Imprime el resultado
         System.out.println(Arrays.toString(lista));
 
-        // Se ejecutará mientras la longitud de la lista sea igual a 1
-        while (lista.length == 1) {
-            random1 = (int) (Math.random() * lista.length);
-            random2 = (int) (Math.random() * lista.length);
+        // Llama a la función que devuelve la lista
+        lista = generaNumeroSuerte(lista);
 
-            if (key == null) {
-                
-            }
-
-        }
-
+        // Imprime resultado
+        System.out.println("Tu número de la suerte es: ");
+        System.out.println(Arrays.toString(lista));
     }
 
 }
