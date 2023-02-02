@@ -18,7 +18,7 @@ import java.util.Arrays;
 
             // Bucle que recorre la tabla
             while (posicion < tabla.length) {
-                // Comprueba si los números son pares
+                // Comprueba si los números son impares
                 if (tabla[posicion] % 2 != 0) {
                     // Copia el número siguiente de la tabla y lo pega un número antes para sobreescribir el número actual
                     System.arraycopy(tabla, posicion + 1 , tabla, posicion, tabla.length - 1 - posicion);
