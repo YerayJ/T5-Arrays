@@ -9,7 +9,7 @@ public class Funciones {
             // Recorre la columna teniendo en cuenta la longitud de la fila
             for (int col = 0; col < tabla[fila].length; col++) {
                 // Imprime la tabla mediante tabuladores
-                System.out.print("\t" + tabla[fila][col] + " ");
+                System.out.print("\t" + tabla[fila][col] );
             }
             // Imprime un espacio
             System.out.println();
