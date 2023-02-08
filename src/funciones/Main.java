@@ -17,7 +17,7 @@ public class Main {
         System.out.println(Arrays.toString(Funciones.rellenaPares(10,13)));
 
         // Ejercicio 4
-
+        System.out.println("La posición del número es: " + Funciones.buscar(tabla,10));
 
     }
 }
