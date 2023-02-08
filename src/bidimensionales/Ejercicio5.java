@@ -21,6 +21,7 @@ public class Ejercicio5 {
             }
         } // Fin de bucle
 
+        // Inicia un bucle que serán las filas hasta la longitud de la posición 0, que en este caso es 5
         for (int fila = 0; fila < tabla.length; fila++) {
             suma = 0;
             for (int col = 0; col < tabla[fila].length; col++) {
