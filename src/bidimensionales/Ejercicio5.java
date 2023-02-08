@@ -5,7 +5,7 @@ public class Ejercicio5 {
         // Creación de notas de 3*6
         int tabla[][] = new int[4][5];
 
-        // Creación variable suma de filas
+        // Creación variable suma de todo
         int total = 0;
 
         // Creación de variable auxiliar suma
