@@ -84,11 +84,11 @@ public class Funciones {
             if (t[i] <= valor) {
                 // Añade una posición a la tabla
                 tabla = Arrays.copyOf(tabla, tabla.length + 1);
-                //
+                // El valor se le añade a la última posición de la tabla
                 tabla[tabla.length - 1] = t[i];
             }
         }
-
+        // Devuelve la tabla
         return tabla;
     }
 
