@@ -1,5 +1,7 @@
 package funciones;
 
+import java.util.Arrays;
+
 public class Funciones {
     public static int sumaTabla(int[] t) {
         // Tabla copia
@@ -45,6 +47,7 @@ public class Funciones {
         // Devuelve tabla
         return tabla;
     }
+
     public static int buscar(int[] t, int clave) {
         // Tabla copia
         int[] tabla = t;
@@ -53,7 +56,7 @@ public class Funciones {
         int indiceBusqueda = 0;
 
         // Inicia un bucle que se ejecuta hasta la longitud de la tabla
-        while (indiceBusqueda<tabla.length && clave != tabla[indiceBusqueda]) {
+        while (indiceBusqueda < tabla.length && clave != tabla[indiceBusqueda]) {
             indiceBusqueda++;
         }
         // Si el indice es mayor igual a la longitud de la tabla significa que se ha salido de la tabla, por lo que
@@ -65,31 +68,28 @@ public class Funciones {
         // Devuelve la posición
         return indiceBusqueda;
     }
+
     public static int[] sinRepetidos(int[] t) {
-        // Tabla copia donde se almacenará los valores no repetidos
-        int[] sinRepetidos = new int[0];
 
-        // Creación de variable para saber si esta repetido
-        boolean repetido = true;
+        return t;
+    }
 
-        // Índice búsqueda que muestra la posición
-        int indiceBusqueda = 0;
+    public static int[] eliminarMayores(int[] t, int valor) {
+        // Tabla auxiliar
+        int tabla[] = new int[0];
 
-        // Inicia un bucle que se ejecuta hasta la longitud de la tabla
+        // Recorre la tabla
         for (int i = 0; i < t.length; i++) {
-            // Busca la posición del valor en la tabla
-            while (indiceBusqueda<t.length && t[i] != t[indiceBusqueda]) {
-                indiceBusqueda++;
-            }
-            if (t[indiceBusqueda] < t.length) {
-                sinRepetidos[] = ;
+            // Comprueba que el número actual de la tabla es menor que el valor
+            if (t[i] <= valor) {
+                // Añade una posición a la tabla
+                tabla = Arrays.copyOf(tabla, tabla.length + 1);
+                //
+                tabla[tabla.length - 1] = t[i];
             }
         }
 
-
-        // Devuelve la posición
-        return sinRepetidos;
+        return tabla;
     }
-
 
 } // Fin de clase

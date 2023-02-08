@@ -19,5 +19,10 @@ public class Main {
         // Ejercicio 4
         System.out.println("La posición del número es: " + Funciones.buscar(tabla,10));
 
+        // Ejercicio 5
+        //System.out.println("La posición del número es: " + Funciones.sinRepetidos(Arrays.toString(tabla)));
+
+        // Ejercicio 6
+        System.out.println("La tabla sin los máximos es: " + Arrays.toString(Funciones.eliminarMayores(tabla,2)));
     }
 }
