@@ -45,7 +45,6 @@ public class Funciones {
         // Devuelve tabla
         return tabla;
     }
-
     public static int buscar(int[] t, int clave) {
         // Tabla copia
         int[] tabla = t;
@@ -66,5 +65,31 @@ public class Funciones {
         // Devuelve la posición
         return indiceBusqueda;
     }
+    public static int[] sinRepetidos(int[] t) {
+        // Tabla copia donde se almacenará los valores no repetidos
+        int[] sinRepetidos = new int[0];
+
+        // Creación de variable para saber si esta repetido
+        boolean repetido = true;
+
+        // Índice búsqueda que muestra la posición
+        int indiceBusqueda = 0;
+
+        // Inicia un bucle que se ejecuta hasta la longitud de la tabla
+        for (int i = 0; i < t.length; i++) {
+            // Busca la posición del valor en la tabla
+            while (indiceBusqueda<t.length && t[i] != t[indiceBusqueda]) {
+                indiceBusqueda++;
+            }
+            if (t[indiceBusqueda] < t.length) {
+                sinRepetidos[] = ;
+            }
+        }
+
+
+        // Devuelve la posición
+        return sinRepetidos;
+    }
+
 
 } // Fin de clase
