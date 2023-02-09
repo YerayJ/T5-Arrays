@@ -70,8 +70,28 @@ public class Funciones {
     }
 
     public static int[] sinRepetidos(int[] t) {
+        // Tabla auxiliar
+        int tabla[] = new int[0];
 
-        return t;
+        // Variable posición
+        int aux = 0;
+
+        // Recorre la tabla
+        for (int i = 0; i < t.length; i++) {
+            // Ordena la tabla
+            Arrays.sort(t);
+            // Busca en la tabla nueva si existe ese número
+            aux = Arrays.binarySearch(tabla, t[i]);
+            // Comprueba si ha encontrado la posición
+            if (aux < 0) {
+                // Añade una posición a la tabla
+                tabla = Arrays.copyOf(tabla, tabla.length + 1);
+                // El valor se le añade a la última posición de la tabla
+                tabla[tabla.length - 1] = t[i];
+            }
+
+        } // Fin de bucle
+        return tabla;
     }
 
     public static int[] eliminarMayores(int[] t, int valor) {
