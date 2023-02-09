@@ -59,7 +59,7 @@ public class Funciones {
         while (indiceBusqueda < tabla.length && clave != tabla[indiceBusqueda]) {
             indiceBusqueda++;
         }
-        // Si el indice es mayor igual a la longitud de la tabla significa que se ha salido de la tabla, por lo que
+        // Si el índice es mayor igual a la longitud de la tabla significa que se ha salido de la tabla, por lo que
         // no se ha encontrado la posición
         if (indiceBusqueda >= tabla.length) {
             // Le asignamos menos 1
@@ -72,22 +72,24 @@ public class Funciones {
     public static int[] sinRepetidos(int[] t) {
         // Tabla auxiliar
         int tabla[] = new int[0];
+        // Tabla copia
+        int tablaCopia[] = Arrays.copyOf(t,t.length);
 
         // Variable posición
-        int aux = 0;
+        int aux;
 
         // Recorre la tabla
-        for (int i = 0; i < t.length; i++) {
+        for (int i = 0; i < tablaCopia.length; i++) {
             // Ordena la tabla
-            Arrays.sort(t);
+            Arrays.sort(tablaCopia);
             // Busca en la tabla nueva si existe ese número
-            aux = Arrays.binarySearch(tabla, t[i]);
+            aux = Arrays.binarySearch(tabla, tablaCopia[i]);
             // Comprueba si ha encontrado la posición
             if (aux < 0) {
                 // Añade una posición a la tabla
                 tabla = Arrays.copyOf(tabla, tabla.length + 1);
                 // El valor se le añade a la última posición de la tabla
-                tabla[tabla.length - 1] = t[i];
+                tabla[tabla.length - 1] = tablaCopia[i];
             }
 
         } // Fin de bucle
@@ -108,6 +110,24 @@ public class Funciones {
                 tabla[tabla.length - 1] = t[i];
             }
         }
+        // Devuelve la tabla
+        return tabla;
+    }
+
+    public static int[] buscarTodos(int[] t, int valor) {
+        // Tabla auxiliar
+        int tabla[] = new int[0];
+
+        // Busca valor en la tabla
+        for (int i = 0; i < t.length; i++) {
+            if (valor == t[i]) {
+                // Añade una posición a la tabla
+                tabla = Arrays.copyOf(tabla, tabla.length + 1);
+                // El valor se le añade a la última posición de la tabla
+                tabla[tabla.length - 1] = i;
+            }
+        } // Fin del bucle
+
         // Devuelve la tabla
         return tabla;
     }

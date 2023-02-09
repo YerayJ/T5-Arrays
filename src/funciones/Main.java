@@ -24,5 +24,9 @@ public class Main {
 
         // Ejercicio 6
         System.out.println("La tabla sin los máximos es: " + Arrays.toString(Funciones.eliminarMayores(tabla,2)));
+
+        // Ejercicio 7
+        System.out.println("La posición del valor es: " + Arrays.toString(Funciones.buscarTodos(tabla,1)));
+
     }
 }
