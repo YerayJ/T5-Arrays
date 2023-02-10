@@ -73,7 +73,7 @@ public class Funciones {
         // Tabla auxiliar
         int tabla[] = new int[0];
         // Tabla copia
-        int tablaCopia[] = Arrays.copyOf(t,t.length);
+        int tablaCopia[] = Arrays.copyOf(t, t.length);
 
         // Variable posición
         int aux;
@@ -130,6 +130,87 @@ public class Funciones {
 
         // Devuelve la tabla
         return tabla;
+    }
+
+    public static int[] suma(int[] t, int numElementos) {
+        // Tabla auxiliar
+        int suma[] = new int[0];
+        // Variable auxiliar
+        int aux;
+
+        // Busca valor en la tabla
+        for (int i = 0; i <= t.length - numElementos; i++) {
+            // Reinicia la variable a 0
+            aux = 0;
+            // Añade una posición al array
+            suma = Arrays.copyOf(suma, suma.length + 1);
+            for (int j = 0; j < numElementos; j++) {
+                // El aux será la suma y cogerá el valor de la posición actual más el rango al que llega.
+                aux += t[i + j];
+            }
+            // Mete la suma en la última posición
+            suma[suma.length - 1] = aux;
+        } // Fin del bucle
+
+        // Devuelve la tabla
+        return suma;
+    }
+
+    public static boolean esMagica(int tabla[][]) {
+        // Variable booleana dice si es magico
+        boolean esMagica = true;
+        // Variable suma de filas
+        int sumaFilas = 0;
+        // Variable auxiliar suma
+        int sumaActual;
+
+        // Le da valor a la sumaFilas
+        for (int i = 0; i < tabla[0].length; i++) {
+            sumaFilas += tabla[0][i];
+        }
+        // Recorre las filas para comprobar si es igual la suma de las filas
+        for (int fila = 0; fila < tabla.length; fila++) {
+            sumaActual = 0;
+            for (int col = 0; col < tabla[fila].length; col++) {
+                sumaActual += tabla[fila][col];
+            }
+            if (sumaActual != sumaFilas) {
+                esMagica = false;
+            }
+        } // Fin de bucle
+
+        //
+        if (esMagica) {
+            // Empieza revisando la suma de las columnas
+            for (int col = 0; col < tabla[0].length; col++) {
+                sumaActual = 0;
+                for (int fila = 0; fila < tabla.length; fila++) {
+                    sumaActual += tabla[col][fila];
+                }
+                if (sumaActual != sumaFilas) {
+                    esMagica = false;
+                }
+            }// Fin de bucle
+        } // Fin de la condición
+
+        return esMagica;
+    }
+
+    public static int[][] gira90(int tablainicio[][]){
+        // Tabla auxiliar
+        int tabla90[][] = new int[tablainicio[0].length][tablainicio[0].length];
+
+        // Recorremos la tabla
+        for (int i = 0; i < tablainicio.length; i++) {
+            // Recorre las columnas
+            for (int j = 0; j < tablainicio[i].length; j++) {
+                // A la hora de colocar las posiciones en la tabla en la tabla de 90 grados
+                // las columnas serán la j, e iremos recorriendo al revés las columnas para añadir los valores.
+                tabla90[j][tablainicio.length - i - 1] = tablainicio[i][j];
+            }
+        }
+        // Devuelve la tabla
+        return tabla90;
     }
 
 } // Fin de clase
